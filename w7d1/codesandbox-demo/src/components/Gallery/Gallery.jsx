@@ -1,6 +1,5 @@
 import Image from "../Image/Image";
 import srcLinks from '../../data/images.json';
-// React Component <Gallery />
 
 function Gallery() {
  
