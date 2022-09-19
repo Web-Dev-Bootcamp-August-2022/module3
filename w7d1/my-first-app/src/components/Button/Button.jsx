@@ -1,9 +1,9 @@
 import './Button.css';
 
-function Button({content}){
+function Button(props){
     return (
-        <button className='backgroundRed'>
-            <span>{content}</span>
+        <button className={`backgroundRed ${props.classNames}`}>
+            <span>{props.content}</span>
         </button>
     )
 }

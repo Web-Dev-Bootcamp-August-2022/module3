@@ -11,8 +11,9 @@ function App() {
       <Header />
         {buttonsContent.map((buttonContent) =>{
           const id = uuidv4();
-          return <Button key={id} content={buttonContent} />
+          return <Button key={id} content={buttonContent} classNames={'greenButton'}/>
         })}
+        <span>{buttonsContent}</span>
       <Footer />
     </div>
   );
