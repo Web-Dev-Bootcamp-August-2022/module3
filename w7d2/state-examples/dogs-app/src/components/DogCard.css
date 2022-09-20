@@ -1,0 +1,12 @@
+.dog-card{
+    /* border: 1px solid black; */
+}
+.dogPicture {
+    width: 200px;
+    height: 200px;
+    border-radius: 75%;
+}
+
+.dogHasTails {
+    background-color: chocolate;
+}
