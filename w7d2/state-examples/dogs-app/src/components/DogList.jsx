@@ -2,6 +2,7 @@ import DogCard from "./DogCard";
 import { dogArray } from '../data/index'
 import { useState } from "react"
 import { v4 as uuid } from "uuid"
+import './DogList.css'
 
 function DogList(){
 
@@ -11,7 +12,8 @@ function DogList(){
     const [description, setDescription] = useState(" ")
     const [picture, setPicture] = useState(" ")
     
-    const [showDogs, setShowDogs] = useState(true)
+    const [theme, setTheme] = useState('lightMode');
+    const [showDogs, setShowDogs] = useState(false)
     const [dogsList, setDogsList] = useState(dogArray)
 
     // function handleNameInput(event){
@@ -27,6 +29,7 @@ function DogList(){
         // update my state variable DogList to remove that dog 
     }
     const handleNameInput = (event) => {
+        console.log(event.target.value);
         setName(event.target.value)
     }
     const handleAgeInput = (event) => setAge(event.target.value)
@@ -51,6 +54,18 @@ function DogList(){
     const hideDogs = () => {
         setShowDogs(!showDogs)
     }
+
+    const switchTheme = () => {
+        // const newTheme = theme === 'lightMode' ? 'darkMode' : 'lightMode';
+        // setTheme(newTheme)
+        if(theme === 'lightMode'){
+            setTheme('darkMode')
+        }
+        else {
+            setTheme('lightMode')
+        }
+     
+    }
     // const addDog = () => {
     //     const filouDog = {
     //         name: 'Filou',
@@ -63,7 +78,7 @@ function DogList(){
     // }
 
     return (
-        <div>
+        <div className={theme}>
         <form onSubmit={handleSubmit}>
             <input type="text" name="dogName" value={name} onChange={handleNameInput}/>
             <input type="number" name="age" value={age} onChange={handleAgeInput}/>
@@ -73,6 +88,7 @@ function DogList(){
         </form>
 
         <button onClick={hideDogs}>{showDogs ? "Click here to hide the dogs" : "Click here to show the dogs"}</button>
+        <button onClick={switchTheme}>Switch theme</button>
 
         {showDogs && dogsList.map(dog => 
         <DogCard

@@ -19,7 +19,7 @@ age: 4,
 description: 'The most loyal dog',
 picture: DogImage2,
 hasTails: true,
-hasLegs: false
+hasLegs: true
 }, {
 key: 3,
 name: 'Joey',
