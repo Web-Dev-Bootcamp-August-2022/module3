@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 // import Counter from './components/Counter';
-import IronbnbList from './components/IronbnbList';
+import IronBnbList from './components/IronBnbList';
 import './App.css';
  
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <IronbnbList />
+      <IronBnbList />
       {/* <button onClick={() => setShow(!show)}>
         { show ? "Hide" : "Show"}
       </button>
