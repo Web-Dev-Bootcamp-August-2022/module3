@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
-import projectsData from "../data/projects-data.json";
  
-function ProjectsPage() {
+function ProjectsPage(props) {
   // 1. initializing 'projects' to be an empty array
   const [projects, setProjects] = useState([]); 
- 
+  const { projectsData } = props;
+  console.log('projectsData', projectsData)
   // This effect will run only once on initial render.
   // To do it we set the dependency array empty [].
   useEffect(() => { // 3. Update our state variable 'projects'

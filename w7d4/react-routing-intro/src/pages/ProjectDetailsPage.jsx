@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import projectsData from '../data/projects-data.json';
  
 function ProjectDetailsPage(props) {
-  
   const [project, setProject] = useState({}); // 1. Initialize 'project' to be an empty object
 
   const params = useParams();
@@ -11,7 +10,11 @@ function ProjectDetailsPage(props) {
 
   useEffect(() => { // 3. Update 'project' state variable with project data
     const currentProject = projectsData.find(project => project._id === params.projectId);
-    setProject(currentProject);
+    
+    if(currentProject){
+      setProject(currentProject);
+    }
+    
     // console.log('currentProject', currentProject);
     // eslint-disable-next-line
   },[params.projectId])
