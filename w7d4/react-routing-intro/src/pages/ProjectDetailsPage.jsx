@@ -4,18 +4,25 @@ import projectsData from '../data/projects-data.json';
  
 function ProjectDetailsPage(props) {
   
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState({}); // 1. Initialize 'project' to be an empty object
 
-  const { projectId } = useParams();
-  console.log('projectId -->', projectId);
+  const params = useParams();
+  console.log('params.projectId -->', params.projectId);
 
-  useEffect(() => {
-    const currentProject = projectsData.find(project => project._id === projectId);
+  useEffect(() => { // 3. Update 'project' state variable with project data
+    const currentProject = projectsData.find(project => project._id === params.projectId);
     setProject(currentProject);
     // console.log('currentProject', currentProject);
-  },[projectId])
+    // eslint-disable-next-line
+  },[params.projectId])
   
-  return (
+
+  // !project.hasOwnProperty('name')
+  if(Object.keys(project).length === 0){ // 2. Check if 'project' is an empty object and if yes render Loading
+    return <p>Loading...</p>
+  }
+
+  return ( // 4. If project is not an empty object, render project data 
     <div>
       <h1>Project Details</h1>
       <br/>
