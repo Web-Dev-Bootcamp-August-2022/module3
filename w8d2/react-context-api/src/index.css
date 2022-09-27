@@ -29,8 +29,34 @@ code {
   border-bottom: 1px solid #000000a8;
 }
 
+.light {
+  background-color: #efeded;
+}
+ 
 .dark {
-  background-color: #000000;
+  background-color: #18191a;
+}
+ 
+.Navbar.light {
+  background-color: #ffffff;
+}
+ 
+.Navbar.dark {
+  background-color: #252526;
+  color: #efeded;
+}
+ 
+.light a,
+.light p,
+.light h1,
+.light h3 {
+  color: #000000;
+}
+ 
+.dark a,
+.dark p,
+.dark h1,
+.dark h3 {
   color: #ffffff;
 }
  

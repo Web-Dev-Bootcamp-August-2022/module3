@@ -1,0 +1,15 @@
+[
+    "en-US" : {
+        "homePage": {
+            "navHome": "Home",
+            "navFirstLink": "Projects"
+        }
+    },
+    "fr-FR" : {
+        "homePage": {
+            "navHome": "Maison",
+            "navFirstLink": "Projets"
+        }
+    },
+
+]
