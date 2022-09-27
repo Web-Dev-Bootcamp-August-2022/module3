@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import AddTask from "../components/AddTaskForm";
  
  
 function ProjectDetailsPage (props) {
-  const [project, setProject] = useState(null);
+  const [project, setProject] = useState(null); // 1. Define a State variable for the upcoming project
   
-  const { projectId } = useParams();
+  const { projectId } = useParams(); // 2. Getting the projectId
  
   const getProject = () => {          //  <== ADD A NEW FUNCTION
     axios
@@ -18,12 +19,16 @@ function ProjectDetailsPage (props) {
       .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
-    getProject()
+  useEffect(() => { // 4. useEffect will execute once and fetch specific project
+    getProject();
     // eslint-disable-next-line
   },[])
   
-  return (
+  if(project === null){ // 3. Display this while we wait for the data from the API to load
+    return <p>Loading project...</p>
+  }
+
+  return ( // 5. Render this after state variable 'project' receives the data from the API
     <div className="ProjectDetails">
       {project && (
         <>
@@ -41,6 +46,8 @@ function ProjectDetailsPage (props) {
           </li>
       ))}
  
+      <AddTask refreshProject={getProject} projectId={projectId} /> 
+
       <Link to="/projects">
         <button>Back to projects</button>
       </Link>
