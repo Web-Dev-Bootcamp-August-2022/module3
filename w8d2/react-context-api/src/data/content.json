@@ -1,15 +1,22 @@
 [
-    "en-US" : {
-        "homePage": {
-            "navHome": "Home",
-            "navFirstLink": "Projects"
+        {
+            "en-US" : {
+                "homePage": {
+                    "navHome": "Home",
+                    "navFirstLink": "Projects"
+                }
+        },
+        "fr-FR" : {
+            "homePage": {
+                "navHome": "Maison",
+                "navFirstLink": "Projets"
+            }
+        },
+        "sp-SP" : {
+            "homePage": {
+                "navHome": "Casa",
+                "navFirstLink": "Proyectos"
+            }
         }
-    },
-    "fr-FR" : {
-        "homePage": {
-            "navHome": "Maison",
-            "navFirstLink": "Projets"
-        }
-    },
-
+    }
 ]
